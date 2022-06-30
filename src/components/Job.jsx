@@ -1,13 +1,23 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { Star } from 'react-bootstrap-icons'
+import {connect} from 'react-redux'
+
+const mapStateToProps = (state) => state
+
+const mapDispatchToProps = () => {
+  addtofavourites: (company) => dispatch(addToFav(company))
+}
+
 
 const Job = ({ data }) => (
   <Row
     className="mx-0 mt-3 p-3"
     style={{ border: '1px solid #00000033', borderRadius: 4 }}
   >
-    <Col xs={3}>
+    <Col xs={3} className="d-flex">
+      <Star color='black' size={16} className="mr-3 my-auto"/>
       <Link to={`/${data.company_name}`}>{data.company_name}</Link>
     </Col>
     <Col xs={9}>
@@ -18,4 +28,4 @@ const Job = ({ data }) => (
   </Row>
 )
 
-export default Job
+export default connect(mapStateToProps,mapDispatchToProps)(Job)
