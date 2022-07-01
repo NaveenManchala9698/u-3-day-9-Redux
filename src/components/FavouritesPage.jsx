@@ -1,7 +1,7 @@
 import { Component } from "react";
 import {Container, Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap'
 import {Star} from 'react-bootstrap-icons'
-import {connect} from 'react-redux'
+
 
 const mapStateToProps = () => {
     return{}
@@ -33,4 +33,4 @@ class FavouritesPage extends Component {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps )(FavouritesPage)
+export default FavouritesPage
