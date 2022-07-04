@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MainSearch from "./components/MainSearch";
-import CompanySearchResults from "./components/CompanySearchResults";
-import FavouritesPage from "./components/FavouritesPage";
+
+import FavouritesPage from "./components/Favourites";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -11,7 +11,6 @@ function App() {
       <Routes>
         <Route path="/" element={<MainSearch />} />
         <Route path="/favourites" element={<FavouritesPage />} />
-        <Route path="/:companyName" element={<CompanySearchResults />} />
       </Routes>
     </BrowserRouter>
   );

@@ -13,6 +13,7 @@ const mainReducer = (state = initialState, action) => {
       };
     case "REMOVE_FROM_FAV":
       return {
+        ...state,
         favourites: state.favourites.filter((company) => company !== payload),
       };
     default:
