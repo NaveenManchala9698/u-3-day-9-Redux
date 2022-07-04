@@ -36,7 +36,7 @@ class MainSearch extends Component {
       <Container>
         <Row>
           <Col xs={10} className="mx-auto my-3">
-            <h1>Remote Jobs Search</h1>
+            <h1>Search Jobs</h1>
           </Col>
           <Col xs={10} className="mx-auto">
             <Form onSubmit={this.handleSubmit}>
@@ -44,7 +44,7 @@ class MainSearch extends Component {
                 type="search"
                 value={this.state.query}
                 onChange={this.handleChange}
-                placeholder="type and press Enter"
+                placeholder="Search Jobs here!!"
               />
             </Form>
           </Col>
