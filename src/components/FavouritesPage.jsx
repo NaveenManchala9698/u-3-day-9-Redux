@@ -1,16 +1,16 @@
 import { Component } from "react";
 import {Container, Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap'
 import {Star} from 'react-bootstrap-icons'
+import { connect } from 'react-redux'
+import { removeFromFav } from '../store/actions'
 
 
-const mapStateToProps = () => {
-    return{}
-}
-const mapDispatchToProps = () => {
-    return(
-        <></>
-    )
-}
+
+const mapDispatchToProps = (dispatch) => ({
+    removeFromFav: (f) => {
+      dispatch(removeFromFav(f))
+    },
+  })
 
 class FavouritesPage extends Component {
     render() {
@@ -33,4 +33,4 @@ class FavouritesPage extends Component {
     }
 }
 
-export default FavouritesPage
+export default connect((s) => s, mapDispatchToProps)(FavouritesPage)

@@ -2,13 +2,6 @@ import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { Star } from 'react-bootstrap-icons'
-import {connect} from 'react-redux'
-
-const mapStateToProps = (state) => state
-
-const mapDispatchToProps = () => {
-  addtofavourites: (company) => dispatch(addToFav(company))
-}
 
 
 const Job = ({ data }) => (
@@ -28,4 +21,4 @@ const Job = ({ data }) => (
   </Row>
 )
 
-export default connect(mapStateToProps,mapDispatchToProps)(Job)
+export default Job

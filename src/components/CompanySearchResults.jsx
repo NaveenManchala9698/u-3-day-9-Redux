@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 
 const CompanySearchResults = () => {
   const [jobs, setJobs] = useState([])
+
   const params = useParams()
 
   useEffect(() => {
@@ -15,9 +16,19 @@ const CompanySearchResults = () => {
   const baseEndpoint = 'https://strive-jobs-api.herokuapp.com/jobs?company='
 
   const getJobs = async () => {
-    const response = await fetch(baseEndpoint + params.companyName)
-    const { data } = await response.json()
-    setJobs(data)
+    try {
+      const response = await fetch(baseEndpoint + params.companyName)
+      if (response.ok) {
+        const { data } = await response.json()
+        setJobs(data)
+      } else {
+        console.log()
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 
   return (
